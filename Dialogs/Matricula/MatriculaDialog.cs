@@ -1,12 +1,15 @@
-﻿using demo7dialogs.Dialogs.Matricula.Servicios;
+﻿using BumblebeeRobot.Dialogs.Matricula.Servicios;
+using BumblebeeRobot.Dialogs.Preguntas;
+using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Builder.Dialogs.Choices;
+using Microsoft.Bot.Schema;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace demo7dialogs.Dialogs.Matricula
+namespace BumblebeeRobot.Dialogs.Matricula
 {
     public class MatriculaDialog : WaterfallDialog
     {
@@ -14,40 +17,13 @@ namespace demo7dialogs.Dialogs.Matricula
         {
             AddStep(async (stepContext, cancellationToken) =>
             {
-               
-                return await stepContext.PromptAsync("choicePrompt",
-                new PromptOptions
-                {
-                    Prompt = stepContext.Context.Activity.CreateReply("🤖 Bumblebee: Tengo estas opciones para tí"),
-                    Choices = new[] { new Choice { Value = "Mi Matricula" }, new Choice { Value = "Informacion" }, new Choice { Value = "Realizar un pago" } }.ToList()
-                });
 
-                //Choices = new[] { new Choice { Value = "Admision" }, new Choice { Value = "Matricula" }, new Choice { Value = "Inicio de clases" } }.ToList()
-            });
-
-
-            AddStep(async (stepContext, cancellationToken) =>
-            {
-                
-                    var result = (stepContext.Result as ValueType);
-                    var response = (stepContext.Result as FoundChoice)?.Value;
-
-                    if (response == "Mi Matricula")
-                    {
-                        return await stepContext.BeginDialogAsync(MiMatriculaServiceDialog.Id);
-                    }
-                    if (response == "Informacion")
-                    {
-                        return await stepContext.BeginDialogAsync(InformacionMatriculaServiceDialog.Id);
-                    }
-                    if (response == "Quiero realizar un pago")
-                    {
-                        return await stepContext.BeginDialogAsync(PagoMatriculaServiceDialog.Id);
-                    }
-
-                return await stepContext.NextAsync();
+                return await stepContext.BeginDialogAsync(PreguntasDialog.Id);
 
             });
+
+
+
 
          
         }

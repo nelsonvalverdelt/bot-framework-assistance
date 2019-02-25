@@ -8,12 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Dialogs\Usuario\UserServices\" />
-    <Folder Include="Service\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AdaptiveCards" Version="1.1.2" />
+    <PackageReference Include="LocalStorage" Version="2.0.0-beta-2" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.9" />
     <PackageReference Include="Microsoft.Bot.Builder.Dialogs" Version="4.0.7" />
     <PackageReference Include="Microsoft.Bot.Builder.Integration.AspNet.Core" Version="4.0.7" />

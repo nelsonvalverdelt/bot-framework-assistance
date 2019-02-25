@@ -1,4 +1,4 @@
-﻿using demo7dialogs.Dialogs.Matricula;
+﻿using BumblebeeRobot.Dialogs.Matricula;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Builder.Dialogs.Choices;
 using System;
@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace demo7dialogs.Dialogs.CampusUniversidad
+namespace BumblebeeRobot.Dialogs.CampusUniversidad
 {
     public class CampusTrujilloDialog : WaterfallDialog
     {

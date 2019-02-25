@@ -1,4 +1,4 @@
-﻿namespace demo7dialogs.Bots
+﻿namespace BumblebeeRobot.Bots
 {
     public class BumblebeeBotState
     {

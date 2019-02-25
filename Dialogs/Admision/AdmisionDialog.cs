@@ -1,4 +1,4 @@
-﻿using demo7dialogs.Dialogs.Admision.Servicios;
+﻿using BumblebeeRobot.Dialogs.Admision.Servicios;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Builder.Dialogs.Choices;
 using System;
@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace demo7dialogs.Dialogs.Admision
+namespace BumblebeeRobot.Dialogs.Admision
 {
     public class AdmisionDialog : WaterfallDialog
     {

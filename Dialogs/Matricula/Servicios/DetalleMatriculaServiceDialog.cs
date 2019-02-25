@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace demo7dialogs.Dialogs.Matricula.Servicios
+namespace BumblebeeRobot.Dialogs.Matricula.Servicios
 {
     public class DetalleMatriculaServiceDialog : WaterfallDialog
     {

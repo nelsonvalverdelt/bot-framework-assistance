@@ -1,8 +1,10 @@
 ﻿using System.Linq;
-using demo7dialogs;
-using demo7dialogs.Bots;
+using BumblebeeRobot;
+using BumblebeeRobot.Bots;
+using BumblebeeRobot.Helpers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.BotFramework;
 using Microsoft.Bot.Builder.Dialogs;
@@ -34,6 +36,9 @@ public class Startup
         var configuration = builder.Build();
         services.AddSingleton(configuration);
 
+        services.AddSingleton<IConfiguracionGlobal, ConfiguracionGlobal>();
+        services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
         services.AddBot<BummblebeeBot>(options =>
         {
             var conversationState = new ConversationState(new MemoryStorage());
@@ -50,7 +55,7 @@ public class Startup
             var accessors = new BotAccessors(conversationState)
             {
                 DialogStateAccessor = conversationState.CreateProperty<DialogState>(BotAccessors.DialogStateAccessorName),
-                BankingBotStateStateAccessor = conversationState.CreateProperty<BumblebeeBotState>(BotAccessors.BankingBotStateAccessorName)
+                BumblebeeBotStateAccessor = conversationState.CreateProperty<BumblebeeBotState>(BotAccessors.BumblebeeBotStateAccessorName)
             };
 
             return accessors;
